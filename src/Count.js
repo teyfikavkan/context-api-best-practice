@@ -1,10 +1,8 @@
 import React from "react";
-import { useCounterContext } from "./CounterProvider";
 
-function Count() {
-    const { count } = useCounterContext();
+const Count = React.memo(({count}) => {
     console.log("Count");
     return <div>Count is: {count}</div>;
-}
+});
 
 export default Count;

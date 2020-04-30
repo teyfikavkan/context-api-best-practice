@@ -1,15 +1,11 @@
 import React from "react";
-import Count from "./Count";
-import CountIncreaser from "./CountIncreaser";
-import CountDecreaser from "./CountDecreaser";
 import CounterProvider from "./CounterProvider";
+import Counter from "./Counter";
 
 function App() {
     return (
         <CounterProvider initialCount={5}>
-            <Count />
-            <CountIncreaser />
-            <CountDecreaser />
+            <Counter />
         </CounterProvider>
     );
 }
