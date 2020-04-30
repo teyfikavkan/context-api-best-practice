@@ -1,8 +1,8 @@
 import React from "react";
-import { useCountContext } from "./CounterProvider";
+import { useCount } from "./CounterProvider";
 
 function Count() {
-    const count = useCountContext();
+    const count = useCount();
     console.log("Count");
     return <div>Count is: {count}</div>;
 }

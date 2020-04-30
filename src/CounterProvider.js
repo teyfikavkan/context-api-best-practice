@@ -1,16 +1,12 @@
-import React, { useContext } from "react";
+import constate from "constate";
+import useCounter from "./useCounter";
 
-const CountContext = React.createContext();
+const [CounterProvider, useCount, useIncrease, useDecrease] = constate(
+    useCounter,
+    value => value.count,
+    value => value.increase,
+    value => value.decrease
+);
 
-export function useCountContext() {
-    const value = useContext(CountContext);
-    return value;
-}
-
-function CounterProvider({ count, children }) {
-    return (
-        <CountContext.Provider value={count}>{children}</CountContext.Provider>
-    );
-}
-
+export { useCount, useIncrease, useDecrease };
 export default CounterProvider;

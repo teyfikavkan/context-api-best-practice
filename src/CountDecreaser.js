@@ -1,8 +1,8 @@
 import React from "react";
-import { useCountActionsContext } from "./CountActionsProvider";
+import { useDecrease } from "./CounterProvider";
 
 function CountDecreaser() {
-    const { decrease } = useCountActionsContext();
+    const decrease = useDecrease();
     console.log("CountDecreaser");
     return <button onClick={decrease}>- Decrease</button>;
 }

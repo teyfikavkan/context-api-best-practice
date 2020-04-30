@@ -1,19 +1,16 @@
 import React from "react";
-import useCounter from "./useCounter";
+import Count from "./Count";
+import CountIncreaser from "./CountIncreaser";
+import CountDecreaser from "./CountDecreaser";
 import CounterProvider from "./CounterProvider";
-import CountActionsProvider from "./CountActionsProvider";
-import Counter from "./Counter";
 
 function App() {
-    const { count, increase, decrease } = useCounter({ initialCount: 5 });
     return (
-        <>
-            <CounterProvider count={count}>
-                <CountActionsProvider increase={increase} decrease={decrease}>
-                    <Counter />
-                </CountActionsProvider>
-            </CounterProvider>
-        </>
+        <CounterProvider initialCount={5}>
+            <Count />
+            <CountIncreaser />
+            <CountDecreaser />
+        </CounterProvider>
     );
 }
 
