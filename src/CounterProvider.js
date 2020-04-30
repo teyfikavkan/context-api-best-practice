@@ -1,17 +1,15 @@
 import React, { useContext } from "react";
-import useCounter from "./useCounter";
 
-const CounterContext = React.createContext();
+const CountContext = React.createContext();
 
-export function useCounterContext() {
-    const value = useContext(CounterContext);
+export function useCountContext() {
+    const value = useContext(CountContext);
     return value;
 }
 
-function CounterProvider({ initialCount, children }) {
-    const value = useCounter({ initialCount });
+function CounterProvider({ count, children }) {
     return (
-        <CounterContext.Provider value={value}>{children}</CounterContext.Provider>
+        <CountContext.Provider value={count}>{children}</CountContext.Provider>
     );
 }
 

@@ -1,8 +1,10 @@
 import React from "react";
+import { useCountActionsContext } from "./CountActionsProvider";
 
-const CountDecreaser = React.memo(({ decrease }) => {
+function CountDecreaser() {
+    const { decrease } = useCountActionsContext();
     console.log("CountDecreaser");
     return <button onClick={decrease}>- Decrease</button>;
-});
+}
 
 export default CountDecreaser;
